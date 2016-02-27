@@ -10,29 +10,31 @@
         <script src="/jslibs/modernizr-custom.js"></script>
     </head>
     <body>
-        <div style="width:400px">
-            <h1>Azure Bobblehead</h1>
-            <p>Upload a picture of a head to get started!</p>
+        <div class="container=fluid">
+            <div class="row" style="width:400px">
+                <h1>Azure Bobblehead</h1>
+                <p>Upload a picture of a head to get started!</p>
+            </div>
+            <div class="row" id="getusermedia" style="display:none">
+                <canvas id="canvas" style="display:none;"></canvas>
+                <video autoplay="true" id="video"></video>
+                <img id="image" class="img-responsive center-block" src="" style="display:none">
+                <script src="/js/index.js"></script>
+            </div>
+            <div class="row" id="nogetusermedia" style="display:none">
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <input type="file" name="userPhoto" accept="image/*" capture>
+                    <input type="submit" value="Upload Image" name="submit">
+                </form>
+                <img id="image" src="">
+            </div>
         </div>
-        <div id="getusermedia" style="display:none">
-            <video autoplay="true" id="videoElement"></video>
-            <script src="/js/index.js"></script>
-        </div>
-        <div id="nogetusermedia" style="display:none">
-            <form action="/" method="post" enctype="multipart/form-data">
-                <input type="file" name="userPhoto" accept="image/*" capture>
-                <input type="submit" value="Upload Image" name="submit">
-            </form>
-            <!--<img src=image>-->
-        </div>
-        
-        
         <script>
-        if(Modernizr.getusermedia) {
-            document.getElementById("getusermedia").style.display = "inline";
-        } else {
-            document.getElementById("nogetusermedia").style.display = "inline";
-        }            
+            if(Modernizr.getusermedia) {
+                document.getElementById("getusermedia").style.display = "inline";
+            } else {
+                document.getElementById("nogetusermedia").style.display = "inline";
+            }            
         </script>
     </body>
     <script src="jslibs/bootstrap.min.js"></script>
