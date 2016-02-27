@@ -21,6 +21,8 @@ var localMediaStream = null;
 
 function snapshot() {
     if (localMediaStream) {
+        canvas.width = video.clientWidth
+        canvas.height = video.clientHeight
         ctx.drawImage(video, 0, 0);
         document.querySelector('#image').src = canvas.toDataURL('image/png');
         document.querySelector('#video').style.display = "none";

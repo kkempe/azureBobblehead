@@ -11,22 +11,26 @@
     </head>
     <body>
         <div class="container=fluid">
-            <div class="row" style="width:400px">
+            <div class="jumbotron" style="">
                 <h1>Azure Bobblehead</h1>
-                <p>Upload a picture of a head to get started!</p>
+                <p>Create and share a bobble head created in Azure!</p>
             </div>
             <div class="row" id="getusermedia" style="display:none">
+                <p>Click the video to take a snapshot for Azure to turn into a bobblehead:</p>
                 <canvas id="canvas" style="display:none;"></canvas>
                 <video autoplay="true" id="video"></video>
                 <img id="image" class="img-responsive center-block" src="" style="display:none">
-                <script src="/js/index.js"></script>
+                <script src="/js/getusermedia.js"></script>
             </div>
             <div class="row" id="nogetusermedia" style="display:none">
+                <p>Upload the picture of your face for Azure to turn into a bobble head:</p>
                 <form action="/" method="post" enctype="multipart/form-data">
-                    <input type="file" name="userPhoto" accept="image/*" capture>
-                    <input type="submit" value="Upload Image" name="submit">
+                    <input type='file' onchange="readURL(this);" name="userPhoto" accept="image/*" capture>
+                    <!--<input type="file" name="userPhoto" accept="image/*" capture>
+                    <input type="submit" value="Upload Image" name="submit">-->
                 </form>
                 <img id="image" src="">
+                <script src="/js/fileinput.js"></script>
             </div>
         </div>
         <script>
@@ -37,5 +41,6 @@
             }            
         </script>
     </body>
+    <script src="jslibs/jquery.min.js"></script>
     <script src="jslibs/bootstrap.min.js"></script>
 </html>
