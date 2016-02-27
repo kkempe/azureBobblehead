@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Azure Bobblehead</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/jslibs/modernizr-custom.js"></script>
+    </head>
+    <body>
+        <div style="width:400px">
+            <h1>Azure Bobblehead</h1>
+            <p>Upload a picture of a head to get started!</p>
+        </div>
+        <div id="getusermedia" style="display:none">
+            <video autoplay="true" id="videoElement"></video>
+            <script src="/js/index.js"></script>
+        </div>
+        <div id="nogetusermedia" style="display:none">
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="userPhoto" accept="image/*" capture>
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
+            <!--<img src=image>-->
+        </div>
+        
+        
+        <script>
+        if(Modernizr.getusermedia) {
+            document.getElementById("getusermedia").style.display = "inline";
+        } else {
+            document.getElementById("nogetusermedia").style.display = "inline";
+        }            
+        </script>
+    </body>
+    <script src="jslibs/bootstrap.min.js"></script>
+</html>
