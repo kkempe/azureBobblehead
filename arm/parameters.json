@@ -3,7 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "deployment_name": {
+<<<<<<< HEAD
             "value": "kk1"
+=======
+            "value": "dz1"
+>>>>>>> upstreat/master
         }
     }
 }
