@@ -58,34 +58,9 @@
             "kind": "app",
             "name": "[variables('sites_name')]",
             "apiVersion": "2015-08-01",
-            "location": "[resourceGroup().location]",
-            "tags": {
-
-            },
-            "scale": null,
+            "location": "[resourceGroup().location]",            
             "properties": {
                 "name": "[variables('sites_name')]",
-                "hostNames": [
-                    "[concat(variables('sites_name'),'.azurewebsites.net')]"
-                ],
-                "enabledHostNames": [
-                    "[concat(variables('sites_name'),'.azurewebsites.net')]",
-                    "[concat(variables('sites_name'),'.scm.azurewebsites.net')]"
-                ],
-                "hostNameSslStates": [
-                    {
-                        "name": "[concat(variables('sites_name'),'.azurewebsites.net')]",
-                        "sslState": 0,
-                        "thumbprint": null,
-                        "ipBasedSslState": 0
-                    },
-                    {
-                        "name": "[concat(variables('sites_name'),'.scm.azurewebsites.net')]",
-                        "sslState": 0,
-                        "thumbprint": null,
-                        "ipBasedSslState": 0
-                    }
-                ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('serverfarms_webplan_name'))]"
             },
             "resources": [
